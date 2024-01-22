@@ -28,7 +28,7 @@ class ConstraintsWidget extends StatelessWidget {
       height: 500,
       width: 500,
       color: Colors.blue,
-      child: UnconstrainedBox( // 부모의 제약조건을 따르지 않음
+      child: OverflowBox( // 부모의 제약조건을 따르지 않음
         child: Container(
           height: 700,
           width: 300,
