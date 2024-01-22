@@ -30,7 +30,7 @@ class ConstraintsWidget extends StatelessWidget {
       color: Colors.blue,
       child: Center(
         child: Container(
-          constraints: BoxConstraints.tight(Size(200, 200)), // tight는 빡빡함
+          constraints: BoxConstraints.loose(Size(200, 200)), // loose는 널널함 자식 객체 크기를 따라감
           color: Colors.red,
           child: Container(
             width: 50,
