@@ -4,7 +4,7 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text("Widget 비율로 배치"),
+        title: Text("Widget 쌓아서 배치"),
       ),
       body: const Body(),
     ),
@@ -16,61 +16,33 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        Expanded( // SingleChildScrollView 내부에서는 Expanded, Flexible 둘다 사용 불뷰
-          child: Container(
-            color: Colors.blue,
-            width: double.infinity,
-            height: 200,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                  Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                  ),
-                ],
-              ),
-            ),
-          ),
+        Container(
+          width: 500,
+          height: 400,
+          color: Colors.black,
         ),
         Container(
+          width: 400,
+          height: 300,
           color: Colors.red,
+        ),
+        Container(
+          width: 300,
+          height: 200,
+          color: Colors.green,
+        ),
+        Container(
+          width: 200,
           height: 100,
-        )
+          color: Colors.blue,
+        ),
+        Container(
+          width: 100,
+          height: 50,
+          color: Colors.yellow,
+        ),
       ],
     );
   }
