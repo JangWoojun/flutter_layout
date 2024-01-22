@@ -28,18 +28,14 @@ class ConstraintsWidget extends StatelessWidget {
       height: 500,
       width: 500,
       color: Colors.blue,
-      child: Center(
+      child: UnconstrainedBox( // 부모의 제약조건을 따르지 않음
         child: Container(
-          constraints: BoxConstraints.loose(Size(200, 200)), // loose는 널널함 자식 객체 크기를 따라감
+          height: 700,
+          width: 300,
           color: Colors.red,
-          child: Container(
-            width: 50,
-            height: 50,
-            color: Colors.yellow,
-          ),
         ),
-      ),
-    );
+      )
+      );
   }
 }
 
