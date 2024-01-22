@@ -1,46 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text("Widget 쌓아서 배치"),
-      ),
-      body: const Body(),
-    ),
+  runApp(const MaterialApp(
+    home: HomeWidget()
   ));
 }
 
-class Body extends StatelessWidget {
-  const Body({super.key});
+class HomeWidget extends StatelessWidget {
+  const HomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Align(
-        alignment: Alignment.center,
-        child: Container(
-          width: 300,
-          height: 300,
-          decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(400)),
-        ),
+    return const SafeArea(
+      child: Scaffold(
+        body: ConstraintsWidget(),
       ),
-      Align(
-        alignment: Alignment.center,
-        child: Container(
-          width: 280,
-          height: 280,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(400)),
-          child: Center(
-            child: Text(
-              "count 0",
-              style: TextStyle(color: Colors.blue, fontSize: 30),
-            ),
-          ),
-        ),
-      ),
-    ]);
+    );
   }
 }
+
+class ConstraintsWidget extends StatelessWidget {
+  const ConstraintsWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 500,
+      width: 500,
+      color: Colors.blue,
+      child: Center(
+        child: Container(
+          constraints: const BoxConstraints(
+            minHeight: 200,
+            minWidth: 200,
+            maxHeight: 250,
+            maxWidth: 250
+          ),
+          height: 300,
+          width: 300,
+          color: Colors.red,
+        ),
+      ),
+    );
+  }
+}
+
