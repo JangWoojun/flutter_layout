@@ -33,14 +33,16 @@ class Body extends StatelessWidget {
           height: 200,
           color: Colors.green,
         ),
-        Container(
-          width: 200,
-          height: 100,
-          color: Colors.blue,
+        Align(
+          alignment: const Alignment(1, 0),
+          child: Container(
+            width: 200,
+            height: 100,
+            color: Colors.blue,
+          ),
         ),
-        Positioned(
-          bottom: 0,
-          right: 0,
+        Align(
+          alignment: Alignment.center,
           child: Container(
             width: 100,
             height: 50,
